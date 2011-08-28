@@ -5,7 +5,7 @@ using System.Text;
 
 namespace HolePunching
 {
-    enum MessageType
+    public enum MessageType
     {
         Register,
         RequestClient,

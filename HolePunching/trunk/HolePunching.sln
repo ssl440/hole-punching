@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolePunching", "HolePunching\HolePunching.csproj", "{CC164B89-632C-4BC3-B371-CE95043B94A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestClient", "Test\TestClient.csproj", "{084430E8-192C-49B6-AC94-1DDC1210DC38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestServer", "TestServer\TestServer.csproj", "{850CDB26-5C7B-4090-9153-E10C61744B1D}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -17,6 +21,14 @@ Global
 		{CC164B89-632C-4BC3-B371-CE95043B94A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC164B89-632C-4BC3-B371-CE95043B94A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC164B89-632C-4BC3-B371-CE95043B94A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{084430E8-192C-49B6-AC94-1DDC1210DC38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{084430E8-192C-49B6-AC94-1DDC1210DC38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{084430E8-192C-49B6-AC94-1DDC1210DC38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{084430E8-192C-49B6-AC94-1DDC1210DC38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{850CDB26-5C7B-4090-9153-E10C61744B1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{850CDB26-5C7B-4090-9153-E10C61744B1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{850CDB26-5C7B-4090-9153-E10C61744B1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{850CDB26-5C7B-4090-9153-E10C61744B1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
