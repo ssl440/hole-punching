@@ -70,7 +70,7 @@ namespace HolePunching
                 _clientSocket.Receive(bytes);
 
                 MessageType messageType = (MessageType) bytes[0];
-                Console.WriteLine("Ricevuto MessageType: " + messageType);
+                Console.WriteLine("MessageType received: " + messageType);
 
                 switch (messageType)
                 {
@@ -80,7 +80,7 @@ namespace HolePunching
                         Buffer.BlockCopy(bytes, 1, byteAddress, 0, 4);
                         Buffer.BlockCopy(bytes, 5, bytePort, 0, 2);
                         IPEndPoint remoteEndPoint = new IPEndPoint(new IPAddress(byteAddress), BitConverter.ToUInt16(bytePort, 0));
-                        Console.WriteLine("Indirizzo verso il quale effettuare HP: " + remoteEndPoint);
+                        Console.WriteLine("HP will be done towards this address: " + remoteEndPoint);
 
                         _connectSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                         _connectSocket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
@@ -112,6 +112,22 @@ namespace HolePunching
             BackgroundWorker bw = new BackgroundWorker();
             bw.DoWork += ProcessRequest;
             bw.RunWorkerAsync();
+        }
+
+        public Socket HolePunch (IPAddress otherAddress)
+        {
+            byte[] bytes = new byte[5];
+            Buffer.BlockCopy(BitConverter.GetBytes((byte)MessageType.RequestClient), 0, bytes, 0, 1);
+            Buffer.BlockCopy(otherAddress.GetAddressBytes(), 0, bytes, 1, 4);
+
+            _clientSocket.Send(bytes);
+
+            while (_connectSocket == null)
+            {
+                System.Threading.Thread.Sleep(1500);
+            }
+
+            return _connectSocket;
         }
     }
 }
