@@ -36,7 +36,7 @@ namespace HolePunching
             {
                 IPEndPoint iep = (IPEndPoint)eventArgs.Argument;
                 _connectSocket.Connect(iep);
-                Console.WriteLine("Connessione effettuata correttamente verso: " + iep);
+                Console.WriteLine("Connected correctly with: " + iep);
                 _serverSocket.Close();
                 _holePunchedSocket = _connectSocket;
             }
@@ -52,7 +52,7 @@ namespace HolePunching
             try
             {
                 Socket s = _serverSocket.Accept();
-                Console.WriteLine("Ricevuta connessione da: " + s.RemoteEndPoint);
+                Console.WriteLine("Received connection from: " + s.RemoteEndPoint);
                 _holePunchedSocket = s;
             }
             catch (Exception e)
